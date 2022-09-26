@@ -35,7 +35,7 @@ public class WeatherForecastController : ControllerBase
     [Route("Get/wetherforecas")]
     [Route("Get/wetherforecas2")]
     [Route("[action]")]
-    public IEnumerable<WeatherForecast> GetW()
+    public IEnumerable<WeatherForecast> Get()
     {
         return ListWeatherForecast;
     }
