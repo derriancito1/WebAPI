@@ -1,4 +1,5 @@
 using WebAPI.Middlwares;
+using WebAPI.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+//builder.Services.AddScoped<IHelloWorldService, HelloworldService>();
+builder.Services.AddScoped<IHelloWorldService>(p=> new HelloworldService());
 
 var app = builder.Build();
 
@@ -21,10 +24,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
-
-
-app.UseTimeMiddleware();
 
 app.MapControllers();
 
