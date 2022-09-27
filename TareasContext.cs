@@ -2,10 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Entity_Framework.Models;
+using WebAPI.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Entity_Framework;
+namespace WebAPI;
 
 public class TareasContext: DbContext
 {
